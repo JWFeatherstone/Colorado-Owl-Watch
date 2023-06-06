@@ -1,0 +1,44 @@
+swiper-container {
+  grid-column: 1;
+  grid-row: 2;
+  height: 100%;
+  width: 40em;
+  overflow: hidden;
+}
+
+swiper-slide {
+  align-self: center;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.owl-slide {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background: black;
+}
+
+.slide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 0;
+}
+
+.slide-body {
+  display: flex;
+  width: 60%;
+  font-size: 0.8rem;
+}
+
+p {
+  margin: 0;
+}
