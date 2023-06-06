@@ -4,6 +4,7 @@ export const owlCodes = {
   burrowing_owl: 'burowl',
   eastern_screech_owl: 'easowl1',
   flammulated_owl: 'flaowl',
+  long_eared_owl: 'loeowl',
   northern_saw_whet_owl: 'nswowl',
   northern_pygmy_owl: 'nopowl',
   short_eared_owl: 'sheowl',

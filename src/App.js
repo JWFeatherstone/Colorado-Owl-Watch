@@ -1,26 +1,15 @@
-import logo from './logo.svg';
-import React, { useState, useEffect, useCallback } from 'react';
-import { fetchRecentObservations } from './APICalls/APICalls';
-import { filterForOwls } from './Utilities/utility';
+import React from 'react';
 import './App.css';
-import Map from './Components/Map/Map';
+import Home from './Components/Home/Home';
+import { Switch, Route } from 'react-router-dom';
 
 const App = () => {
-  const [owls, setOwls] = useState([])
-
-  const fetchOwls = useCallback(async () => {
-    const data = await fetchRecentObservations();
-    console.log(data)
-    const owlData = filterForOwls(data);
-    setOwls(owlData);
-  }, [])
-
-  useEffect(() => {
-    fetchOwls();
-  }, [fetchOwls])
-
   return (
-    <Map owls={owls}/>
+    <Switch>
+      <Route exact path='/'>
+        <Home />
+      </Route>
+    </Switch>
   );
 }
 
