@@ -12,11 +12,22 @@ export const fetchRecentObservations = async() => {
       }
   });
   const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data.message);
+  }
   return data;
 }
 
-const fetchRecentObservationsBySpecies = async(speciesCode) => {
-  const response = await fetch(`https://api.ebird.org/v2/data/obs/US-CO/recent/${speciesCode}?lat=${lat}&lng=${long}`);
+export const fetchRecentObservationsBySpecies = async(speciesCode) => {
+  const response = await fetch(`https://api.ebird.org/v2/data/obs/US-CO/recent/${speciesCode}?lat=${lat}&lng=${long}`,
+  {
+    headers: {
+      'x-ebirdapitoken': MY_KEY
+      }
+  });
   const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data.message);
+  }
   return data;
 }
