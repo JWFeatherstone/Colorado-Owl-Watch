@@ -17,17 +17,23 @@ const Carousel = ({ owls }) => {
       console.log('slide changed');
     });
   }, []);
+  
 
   const owlSlides = owls.map(owl => {
     return (
       <swiper-slide key={owl.id}>
-        <section className="owl-slide">
-          <div className="slide-header">
-            <h3>{owl.comName} ({owl.number})</h3>
-            <p>{owl.obsDt}</p>
-          </div>
-          <div className="slide-body">
-            <p>{owl.locName} {owl.locPrivate}</p>
+        <section 
+          className="owl-slide" 
+          style={{
+            background: `url(${require(`../../Images/${owl.spCode}.png`)}) no-repeat center center / cover`,
+          }}
+        >
+          <div className="slide-banner">
+            <h3 className="slide-header">{owl.comName}</h3>
+            <div className="slide-body">
+              <p className="obs-date">{owl.obsDt}</p>
+              <p>{owl.locName} {owl.locPrivate}</p>
+            </div>
           </div>
         </section>
       </swiper-slide>
@@ -39,10 +45,10 @@ const Carousel = ({ owls }) => {
         ref={swiperElRef}
         slides-per-view="1"
         style={{
-          "--swiper-navigation-color": "#BBBBBB",
+          "--swiper-navigation-color": "#036661",
         }}
         navigation="true"
-        pagination="true"
+        centered-slides="true"
     >
         {owlSlides}
     </swiper-container>

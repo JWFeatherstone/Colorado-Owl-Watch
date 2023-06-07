@@ -21,7 +21,7 @@ const Map = ({ owls }) => {
         <h3>Observation Date</h3>
         <p>{owl.obsDt}</p>
         <h3>Number Observed</h3>
-        <p>{owl.howMany}</p>
+        <p>{owl.number}</p>
       </Popup>
     </Marker>
   ))

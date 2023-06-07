@@ -14,6 +14,7 @@ export const cleanOwlData = (data) => {
       comName: comName,
       sciName: sciName,
       spCode: speciesCode,
+      // remove US-CO and coordinates from locName
       locName: locName,
       locPrivate: locationPrivate ? '(private)' : '(public)',
       lat: lat,
