@@ -1,0 +1,7 @@
+.bird-grid {
+  grid-row: 2;
+  grid-column: 1/5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}

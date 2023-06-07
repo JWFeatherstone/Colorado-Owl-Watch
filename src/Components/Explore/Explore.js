@@ -1,12 +1,13 @@
 import React from 'react';
 import Header from '../Header/Header';
+import BirdGrid from '../BirdGrid/BirdGrid';
 import './Explore.css';
 
-const Explore = () => {
+const Explore = ({favorites, toggleFavorite}) => {
   return (
-    <main>
+    <main className="explore-main">
       <Header />
-      <BirdGrid />
+      <BirdGrid favorites={favorites} toggleFavorite={toggleFavorite} />
     </main>
   )
 }
