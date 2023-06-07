@@ -4,7 +4,7 @@ import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './Map.css';
 
-const Map = ({ owls }) => {
+const Map = ({ owls, favorites }) => {
 
   console.log("owls", owls)
   const customIcon = new Icon ({
@@ -12,8 +12,13 @@ const Map = ({ owls }) => {
     iconSize: [25, 25]
   })
 
+  const favoriteIcon = new Icon ({
+    iconUrl: require('../../Images/favorite-icon.svg').default,
+    iconSize: [25, 25]
+  })
+
   const owlMarkers = owls.map((owl) => (
-    <Marker position={[owl.lat, owl.lng]} icon={customIcon} key={owl.subId}>
+    <Marker position={[owl.lat, owl.lng]} icon={favorites.includes(owl.spCode) ? favoriteIcon : customIcon} key={owl.subId}>
       <Popup>
         <h2 className="popup-header">{owl.comName}</h2>
         <h3>Location</h3>

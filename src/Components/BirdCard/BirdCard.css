@@ -1,0 +1,65 @@
+.bird-card {
+  height: 20em;
+  width: 17em;
+  border-radius: 25px;
+  display: grid;
+  grid-template-rows: 6fr 2.8fr 0.25fr;
+  border-radius: 25px;
+}
+
+.card-banner {
+  grid-row: 2;
+  width: 95%;
+  height: 100%;
+  justify-self: center;
+  border-radius: 15px;
+  background: rgb(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card-name {
+  font-size: 1.3rem;
+  font-family: Span;
+  margin-top: 0.8rem;
+  margin-bottom: 0;
+  width: 95%;
+  text-align: center;
+}
+
+.card-sci-name {
+  margin: 0.1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.card-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 90%;
+  margin-top: 0.5rem;
+}
+
+.card-favorite {
+  height: 20px;
+  width: 20px;
+}
+
+.details-link {
+  font-size: 0.9rem;
+  font-family: brother 1816, sans-serif;
+  font-weight: 700;
+  color: rgb(3, 117, 111);
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.details-link:hover {
+  text-decoration: underline;
+  transform: scale(1.3);
+}

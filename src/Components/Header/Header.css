@@ -50,8 +50,8 @@ header {
 }
 
 .menu {
-  position: fixed;
-  top: 10vh; /* The height of the header */
+  position: absolute;
+  top: 10vh;
   left: 0;
   width: 100%;
   height: 5vh;
@@ -67,7 +67,6 @@ header {
 }
 
 .menu-open {
-  opacity: 1;
   transform: translateY(0);
   transition: transform 0.5s ease-in-out;
 }

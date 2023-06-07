@@ -6,7 +6,7 @@ import { fetchRecentObservations } from '../../APICalls/APICalls';
 import { filterForOwls, cleanOwlData } from '../../Utilities/utility';
 import './Home.css';
 
-const Home = () => {
+const Home = ({ favorites }) => {
   const [owls, setOwls] = useState([])
 
   const fetchOwls = useCallback(async () => {
@@ -26,7 +26,7 @@ const Home = () => {
     <main>
       <Header />
       <Carousel owls={owls} />
-      <Map owls={owls}/>
+      <Map owls={owls} favorites={favorites}/>
     </main>
   )
 }
