@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Home from './Components/Home/Home';
 import Explore from './Components/Explore/Explore';
+import BirdDetails from './Components/BirdDetails/BirdDetails';
 import { Switch, Route } from 'react-router-dom';
 
 const App = () => {
@@ -23,6 +24,9 @@ const App = () => {
       </Route>
       <Route exact path='/explore'>
         <Explore favorites={favorites} toggleFavorite={toggleFavorite}/>
+      </Route>
+      <Route exact path='/explore/:spCode'>
+        <BirdDetails favorites={favorites} toggleFavorite={toggleFavorite}/>
       </Route>
     </Switch>
   );
