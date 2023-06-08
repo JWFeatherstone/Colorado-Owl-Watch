@@ -14,15 +14,35 @@ const BirdDetails = ({favorites, toggleFavorite}) => {
   const [owlFacts, setOwlFacts] = useState({});
   const [owlObs, setOwlObs] = useState([]);
   const [errorMsg, setErrorMsg] = useState('');
-
   const favorited = favorites.includes(spCode);
+  const [idExpanded, setIdExpanded] = useState(false);
+  const [obsExpanded, setObsExpanded] = useState(false);
+  const [rangeExpanded, setRangeExpanded] = useState(false);
 
-  const getOwlFacts = () => {
-    const owl = coowls.find(owl => owl.spCode === spCode);
-    setOwlFacts(owl);
+  const toggleId = () => {
+    setIdExpanded(!idExpanded);
+    setObsExpanded(false);
+    setRangeExpanded(false);
+  }
+
+  const toggleObs = () => {
+    setObsExpanded(!obsExpanded);
+    setIdExpanded(false);
+    setRangeExpanded(false);
+  }
+
+  const toggleRange = () => {
+    setRangeExpanded(!rangeExpanded);
+    setIdExpanded(false);
+    setObsExpanded(false);
   }
 
   useEffect(() => {
+    const getOwlFacts = () => {
+      const owl = coowls.find(owl => owl.spCode === spCode);
+      setOwlFacts(owl);
+    }
+
     getOwlFacts();
     fetchRecentObservationsBySpecies(spCode)
       .then(data => {
@@ -30,28 +50,31 @@ const BirdDetails = ({favorites, toggleFavorite}) => {
         setOwlObs(cleanedData)
       })
       .catch(error => setErrorMsg(error.message))
-  }, [spCode]);
-
-  const recentObs = owlObs.map(obs => {
-    return (
-      <RecentObservations
-        key={obs.id}
-        obsId={obs.id}
-        locName={obs.locName}
-        locPrivate={obs.locPrivate}
-        obsDt={obs.obsDt}
-        obsTime={obs.obsTime}
-        number={obs.number}
-      />
-    )
-  })
+  }, []);
 
   return (
     <>
     <Header />
       <main className="details-main">
-        <HighLevelInfo owlFacts={owlFacts} spCode={spCode} favorited={favorited} toggleFavorite={toggleFavorite} />
-        <CollapsibleInfo owlObs={owlObs} owlFacts={owlFacts} />
+        <HighLevelInfo 
+        owlFacts={owlFacts} 
+        spCode={spCode} 
+        favorited={favorited} 
+        toggleFavorite={toggleFavorite}
+        idExpanded={idExpanded}
+        obsExpanded={obsExpanded}
+        factsExpanded={rangeExpanded}
+        />
+        <CollapsibleInfo 
+          owlObs={owlObs} 
+          owlFacts={owlFacts} 
+          toggleId={toggleId} 
+          toggleFacts={toggleRange} 
+          toggleObs={toggleObs}
+          idExpanded={idExpanded}
+          obsExpanded={obsExpanded}
+          factsExpanded={rangeExpanded}
+        />
         <img src={require(`../../Images/${spCode}.png`)} alt={owlFacts.name} className="owl-detail-image" />
       </main>
     </>
