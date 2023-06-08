@@ -61,6 +61,10 @@
   width: 38em;
 }
 
+.recent-obs-swiper > .swiper-button-next, .recent-obs-swiper > .swiper-button-prev {
+  height: 20px;
+}
+
 @media (min-width: 1624px) {
   .recent-obs-swiper {
     width: 45em;

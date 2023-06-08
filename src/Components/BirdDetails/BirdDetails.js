@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 import { coowls } from '../../Utilities/coowls';
 import { cleanOwlData } from '../../Utilities/utility';
 import { fetchRecentObservationsBySpecies } from '../../APICalls/APICalls';
@@ -13,7 +13,7 @@ const BirdDetails = ({favorites, toggleFavorite}) => {
   const { spCode } = useParams();
   const [owlFacts, setOwlFacts] = useState({});
   const [owlObs, setOwlObs] = useState([]);
-  const [errorMsg, setErrorMsg] = useState('');
+  const [error, setError] = useState('');
   const favorited = favorites.includes(spCode);
   const [idExpanded, setIdExpanded] = useState(false);
   const [obsExpanded, setObsExpanded] = useState(false);
@@ -38,22 +38,30 @@ const BirdDetails = ({favorites, toggleFavorite}) => {
   }
 
   const getOwlObs = useCallback(async () => {
-    const owl = coowls.find(owl => owl.spCode === spCode);
-    setOwlFacts(owl);
-    const data = await fetchRecentObservationsBySpecies(spCode)
-    const cleanedOwlData = cleanOwlData(data);
-    setOwlObs(cleanedOwlData);
+    try {
+      const owl = coowls.find(owl => owl.spCode === spCode);
+      setOwlFacts(owl);
+      const data = await fetchRecentObservationsBySpecies(spCode)
+      const cleanedOwlData = cleanOwlData(data);
+      setOwlObs(cleanedOwlData);
+      setError('');
+    } catch (error) {
+      setError(error.message);
+    }
   }, [])
+  
 
   useEffect(() => {
-    getOwlObs()
-    .catch(error => setErrorMsg(error.message))
+    getOwlObs();
   }, [getOwlObs])
 
 
   return (
     <>
-    <Header />
+    {error ? <Redirect push to ='/error' />
+    :(
+    <>
+      <Header />
       <main className="details-main">
         <HighLevelInfo 
         owlFacts={owlFacts} 
@@ -76,6 +84,8 @@ const BirdDetails = ({favorites, toggleFavorite}) => {
         />
         <img src={require(`../../Images/${spCode}.png`)} alt={owlFacts.name} className="owl-detail-image" />
       </main>
+    </>
+    )}
     </>
   )
 }
