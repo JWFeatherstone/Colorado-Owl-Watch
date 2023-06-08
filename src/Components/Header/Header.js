@@ -35,7 +35,7 @@ const Header = () => {
         />
         <div className="nav-right">
           <h1 className="site-title">COLORADO OWL WATCH</h1>
-          <img className="site-logo" src={require('../../Images/owl-icon-white.svg').default} alt="owl icon" />
+          <NavLink to="/" className="site-logo-link-wrap"><img className="site-logo" src={require('../../Images/owl-icon-white.svg').default} alt="owl icon" /></NavLink>
         </div>
       </nav>
     </header>

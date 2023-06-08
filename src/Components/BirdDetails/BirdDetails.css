@@ -13,3 +13,16 @@
   background-size: cover;
 }
 
+@media (max-width: 768px) {
+  .details-main {
+    height: auto;
+    grid-template-rows: 0.3fr 0.2fr 1fr 0.8fr 0.1fr;
+    grid-template-columns: 0.3fr 5fr 0.3fr;
+  }
+
+  .owl-detail-image {
+    grid-row: 3;
+    grid-column: 2;
+    height: 25em;
+  }
+}

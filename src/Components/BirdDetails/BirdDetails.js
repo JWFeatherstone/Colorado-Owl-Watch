@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { coowls } from '../../Utilities/coowls';
 import { cleanOwlData } from '../../Utilities/utility';
@@ -36,20 +36,19 @@ const BirdDetails = ({favorites, toggleFavorite}) => {
     setObsExpanded(false);
   }
 
-  useEffect(() => {
-    const getOwlFacts = () => {
-      const owl = coowls.find(owl => owl.spCode === spCode);
-      setOwlFacts(owl);
-    }
+  const getOwlObs = useCallback(async () => {
+    const owl = coowls.find(owl => owl.spCode === spCode);
+    setOwlFacts(owl);
+    const data = await fetchRecentObservationsBySpecies(spCode)
+    const cleanedOwlData = cleanOwlData(data);
+    setOwlObs(cleanedOwlData);
+  }, [])
 
-    getOwlFacts();
-    fetchRecentObservationsBySpecies(spCode)
-      .then(data => {
-        const cleanedData = cleanOwlData(data)
-        setOwlObs(cleanedData)
-      })
-      .catch(error => setErrorMsg(error.message))
-  }, []);
+  useEffect(() => {
+    getOwlObs()
+    .catch(error => setErrorMsg(error.message))
+  }, [getOwlObs])
+
 
   return (
     <>
@@ -68,11 +67,11 @@ const BirdDetails = ({favorites, toggleFavorite}) => {
           owlObs={owlObs} 
           owlFacts={owlFacts} 
           toggleId={toggleId} 
-          toggleFacts={toggleRange} 
+          toggleRange={toggleRange} 
           toggleObs={toggleObs}
           idExpanded={idExpanded}
           obsExpanded={obsExpanded}
-          factsExpanded={rangeExpanded}
+          rangeExpanded={rangeExpanded}
         />
         <img src={require(`../../Images/${spCode}.png`)} alt={owlFacts.name} className="owl-detail-image" />
       </main>

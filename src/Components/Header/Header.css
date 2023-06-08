@@ -37,7 +37,6 @@ header {
   align-items: center;
 }
 
-
 .site-logo {
   height: 35px;
   width: 35px;
@@ -95,6 +94,12 @@ header {
   align-items: center;
 }
 
+.site-logo-link-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 1624px) {
   header {
     height: 7vh;
@@ -102,5 +107,32 @@ header {
 
   .menu {
     top: 7vh;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 12vh;
+  }
+
+  .menu {
+    top: 12vh;
+  }
+
+  .menu-link {
+    font-size: 0.6rem;
+    padding: 2%;
+    border: none;
+    text-align: center;
+    width: 15%;
+  }
+
+  .site-title {
+    font-size: 1.3rem;
+  }
+
+  .menu-icon {
+    height: 25px;
+    width: 30px;
   }
 }

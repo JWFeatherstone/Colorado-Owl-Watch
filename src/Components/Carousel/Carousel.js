@@ -1,28 +1,18 @@
-import React, { useRef, useEffect } from 'react';
-import { register } from 'swiper/element/bundle';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation } from 'swiper';
+import 'swiper/swiper.min.css';
 import { Link } from 'react-router-dom';
 import './Carousel.css';
 
-register();
+SwiperCore.use([Navigation]);
 
 const Carousel = ({ owls }) => {
-  const swiperElRef = useRef(null);
-
-  useEffect(() => {
-    swiperElRef.current.addEventListener('progress', (e) => {
-      const [swiper, progress] = e.detail;
-      console.log(progress);
-    });
-
-    swiperElRef.current.addEventListener('slidechange', (e) => {
-      console.log('slide changed');
-    });
-  }, []);
-  
-
   const owlSlides = owls.map(owl => {
     return (
-      <swiper-slide key={owl.id}>
+      <SwiperSlide 
+        key={owl.id}
+        className="home-slides">
         <section 
           className="owl-slide" 
           style={{
@@ -37,22 +27,19 @@ const Carousel = ({ owls }) => {
             </div>
           </div>
         </section>
-      </swiper-slide>
+      </SwiperSlide>
     )
   })
 
   return (
-    <swiper-container
-        ref={swiperElRef}
-        slides-per-view="1"
-        style={{
-          "--swiper-navigation-color": "#036661",
-        }}
-        navigation="true"
-        centered-slides="true"
+    <Swiper
+        className="home-carousel"
+        navigation
+        centeredSlides
+        slidesPerView={1}
     >
         {owlSlides}
-    </swiper-container>
+    </Swiper>
   )
 }
 
