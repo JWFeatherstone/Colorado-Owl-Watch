@@ -1,6 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
+import PropTypes from 'prop-types';
 import 'swiper/swiper.min.css';
 import { Link } from 'react-router-dom';
 import './Carousel.css';
@@ -42,5 +43,9 @@ const Carousel = ({ owls }) => {
     </Swiper>
   )
 }
+
+Carousel.propTypes = {
+  owls: PropTypes.arrayOf(PropTypes.object)
+};
 
 export default Carousel;

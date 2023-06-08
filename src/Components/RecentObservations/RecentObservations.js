@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './RecentObservations.css';
 
 const RecentObservations = ({ obsId, obsDt, obsTime, locName, locPrivate, number }) => {  
@@ -26,5 +27,14 @@ const RecentObservations = ({ obsId, obsDt, obsTime, locName, locPrivate, number
       </article>
   )
 }
+
+RecentObservations.propTypes = {
+  obsId: PropTypes.string,
+  obsDt: PropTypes.string,
+  obsTime: PropTypes.string,
+  locName: PropTypes.string,
+  locPrivate: PropTypes.string,
+  number: PropTypes.number
+};
 
 export default RecentObservations;

@@ -2,13 +2,14 @@ import React, { useEffect, useRef } from 'react';
 import RecentObservations from '../RecentObservations/RecentObservations';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
+import PropTypes from 'prop-types';
 import 'swiper/swiper.min.css';
 import './CollapsibleInfo.css';
 
 SwiperCore.use([Navigation]);
 
 const CollapsibleInfo = ({ owlFacts, owlObs, toggleId, toggleRange, toggleObs, idExpanded, obsExpanded, rangeExpanded }) => {
-  
+
   let recentObs;
   if (owlObs.length === 0) {
     recentObs = <p>No recent observations.</p>;
@@ -17,6 +18,7 @@ const CollapsibleInfo = ({ owlFacts, owlObs, toggleId, toggleRange, toggleObs, i
       return (
         <SwiperSlide key={obs.id}>
           <RecentObservations
+            key={obs.id}
             obsId={obs.id}
             locName={obs.locName}
             locPrivate={obs.locPrivate}
@@ -77,5 +79,25 @@ const CollapsibleInfo = ({ owlFacts, owlObs, toggleId, toggleRange, toggleObs, i
     </section>
   )
 }
+
+CollapsibleInfo.propTypes = {
+  owlFacts: PropTypes.shape({
+    comName: PropTypes.string,
+    sciName: PropTypes.string,
+    identification: PropTypes.string,
+    call: PropTypes.string,
+    behaviors: PropTypes.string,
+    migration: PropTypes.string,
+    fact1: PropTypes.string,
+    fact2: PropTypes.string,
+  }),
+  owlObs: PropTypes.arrayOf(PropTypes.object),
+  toggleId: PropTypes.func.isRequired,
+  toggleRange: PropTypes.func.isRequired,
+  toggleObs: PropTypes.func.isRequired,
+  idExpanded: PropTypes.bool.isRequired,
+  obsExpanded: PropTypes.bool.isRequired,
+  rangeExpanded: PropTypes.bool.isRequired
+};
 
 export default CollapsibleInfo;
