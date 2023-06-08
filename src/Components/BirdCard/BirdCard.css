@@ -1,6 +1,6 @@
 .bird-card {
-  height: 20em;
-  width: 17em;
+  height: 22em;
+  width: 19em;
   border-radius: 25px;
   display: grid;
   grid-template-rows: 6fr 2.8fr 0.25fr;

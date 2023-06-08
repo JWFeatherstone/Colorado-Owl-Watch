@@ -1,0 +1,28 @@
+.owling-info-header-wrap {
+  grid-row: 2/4;
+  grid-column: 3;
+  height: 100%;
+  width: 100%;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tip-header, .tip-sub {
+  text-align: left;
+  width: 80%;
+}
+
+.tip-header {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.tip-sub {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-top: 1rem;
+}
+

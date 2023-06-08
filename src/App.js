@@ -3,6 +3,7 @@ import './App.css';
 import Home from './Components/Home/Home';
 import Explore from './Components/Explore/Explore';
 import BirdDetails from './Components/BirdDetails/BirdDetails';
+import OwlingTips from './Components/OwlingTips/OwlingTips';
 import { Switch, Route } from 'react-router-dom';
 
 const App = () => {
@@ -25,8 +26,14 @@ const App = () => {
       <Route exact path='/explore'>
         <Explore favorites={favorites} toggleFavorite={toggleFavorite}/>
       </Route>
+      <Route exact path='/tracked'>
+        <Explore favorites={favorites} toggleFavorite={toggleFavorite}/>
+      </Route>
       <Route exact path='/explore/:spCode'>
         <BirdDetails favorites={favorites} toggleFavorite={toggleFavorite}/>
+      </Route>
+      <Route exact path='/owling-tips'>
+        <OwlingTips />
       </Route>
     </Switch>
   );

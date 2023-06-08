@@ -14,8 +14,8 @@ const Header = () => {
     <div className={`menu ${menuOpen ? 'menu-open' : ''}`}>
       <nav className="menu-nav">
         {location.pathname !== "/" && <NavLink to="/" className="menu-link" activeClassName="active">Home</NavLink>}
-        {location.pathname !== "/explore" && <NavLink to="/explore" className="menu-link" activeClassName="active">Colorado's owls</NavLink>}
-        {location.pathname !== "/tracked" && <NavLink to="/tracked" className="menu-link" activeClassName="active">Tracked birds</NavLink>}
+        {location.pathname !== "/explore" && <NavLink to="/explore" className="menu-link" activeClassName="active">Owls of Colorado</NavLink>}
+        {location.pathname !== "/tracked" && <NavLink to="/tracked" className="menu-link" activeClassName="active">My Tracked Owls</NavLink>}
         {location.pathname !== "/owling-tips" && <NavLink to="/owling-tips" className="menu-link" activeClassName="active">Tips</NavLink>}
         {location.pathname !== "/about" && <NavLink to="/about" className="menu-link" activeClassName="active">About</NavLink>}
       </nav>
