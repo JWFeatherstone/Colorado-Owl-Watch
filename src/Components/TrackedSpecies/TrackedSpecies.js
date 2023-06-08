@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './TrackedSpecies.css';
 import { coowls } from '../../Utilities/coowls';
 import BirdCard from '../BirdCard/BirdCard';
@@ -18,7 +19,7 @@ const TrackedSpecies = ({ favorites, toggleFavorite }) => {
       />
     )
   })
-// show alternative message if no birds have been favorited
+
   return (
     <>
     {favorites.length === 0 ? <p className="no-favorites">You aren't tracking any birds yet!</p> :
@@ -29,5 +30,10 @@ const TrackedSpecies = ({ favorites, toggleFavorite }) => {
     </>
   )
 }
+
+TrackedSpecies.propTypes = {
+  favorites: PropTypes.arrayOf(PropTypes.string).isRequired,
+  toggleFavorite: PropTypes.func.isRequired,
+};
 
 export default TrackedSpecies;

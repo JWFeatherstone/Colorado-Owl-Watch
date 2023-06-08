@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
 import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -6,7 +7,6 @@ import './Map.css';
 
 const Map = ({ owls, favorites }) => {
 
-  console.log("owls", owls)
   const customIcon = new Icon ({
     iconUrl: require('../../Images/owl-icon-black.svg').default,
     iconSize: [25, 25]
@@ -31,8 +31,6 @@ const Map = ({ owls, favorites }) => {
     </Marker>
   ))
 
-  console.log(owlMarkers)
-
   return (
       <MapContainer center={[39.7392, -104.9903]} zoom={8} scrollWheelZoom={false}>
         <TileLayer
@@ -43,6 +41,11 @@ const Map = ({ owls, favorites }) => {
         {owlMarkers}
       </MapContainer>
   )
+}
+
+Map.propTypes = {
+  owls: PropTypes.arrayOf(PropTypes.object).isRequired,
+  favorites: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default Map;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { coowls } from '../../Utilities/coowls';
 import BirdCard from '../BirdCard/BirdCard';
+import PropTypes from 'prop-types';
 import './BirdGrid.css';
 
 const BirdGrid = ({favorites, toggleFavorite }) => {
@@ -18,12 +19,16 @@ const BirdGrid = ({favorites, toggleFavorite }) => {
     )
   })
 
-
   return (
     <section className="bird-grid">
       {owlCards}
     </section>
   )
 }
+
+BirdGrid.propTypes = {
+  favorites: PropTypes.array.isRequired,
+  toggleFavorite: PropTypes.func.isRequired
+};
 
 export default BirdGrid;

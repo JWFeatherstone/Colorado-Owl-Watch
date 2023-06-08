@@ -3,7 +3,6 @@ import { lat, lng } from '../Utilities/denverCoords';
 const MY_KEY = process.env.REACT_APP_API_KEY;
 
 export const fetchRecentObservations = async() => {
-  // add API key as header
   const response = await fetch(`https://api.ebird.org/v2/data/obs/US-CO/recent`
   , {
     headers: {

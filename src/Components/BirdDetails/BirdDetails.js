@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { coowls } from '../../Utilities/coowls';
 import { cleanOwlData } from '../../Utilities/utility';
@@ -61,7 +62,7 @@ const BirdDetails = ({favorites, toggleFavorite}) => {
         toggleFavorite={toggleFavorite}
         idExpanded={idExpanded}
         obsExpanded={obsExpanded}
-        factsExpanded={rangeExpanded}
+        rangeExpanded={rangeExpanded}
         />
         <CollapsibleInfo 
           owlObs={owlObs} 
@@ -78,5 +79,10 @@ const BirdDetails = ({favorites, toggleFavorite}) => {
     </>
   )
 }
+
+BirdDetails.propTypes = {
+  favorites: PropTypes.array.isRequired,
+  toggleFavorite: PropTypes.func.isRequired
+};
 
 export default BirdDetails;

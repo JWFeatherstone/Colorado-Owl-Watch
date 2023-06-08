@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './BirdCard.css';
 import { Link } from 'react-router-dom';
 
@@ -26,5 +27,13 @@ const BirdCard = ({name, spCode, sciName, favorited, toggleFavorite}) => {
     </article>
   )
 }
+
+BirdCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  spCode: PropTypes.string.isRequired,
+  sciName: PropTypes.string.isRequired,
+  favorited: PropTypes.bool.isRequired,
+  toggleFavorite: PropTypes.func.isRequired
+};
 
 export default BirdCard;
