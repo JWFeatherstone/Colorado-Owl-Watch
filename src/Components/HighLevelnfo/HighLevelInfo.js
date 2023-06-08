@@ -1,9 +1,11 @@
 import React from 'react';
 import './HighLevelInfo.css';
 
-const HighLevelInfo = ({ owlFacts, spCode, favorited, toggleFavorite, idExpanded, obsExpanded, factsExpanded }) => {
+const HighLevelInfo = ({ owlFacts, spCode, favorited, toggleFavorite, idExpanded, obsExpanded, rangeExpanded }) => {
   return (
-    <section className="high-level-info-container">
+    <section 
+    className={"high-level-info-container " + (idExpanded || obsExpanded || rangeExpanded ? "high-level-collapsed" : "")}
+    >
       <h2 className="high-level-header">{owlFacts.comName}</h2>
       <div className="high-level-sub-container">
       <h3 className="high-level-subheader">{owlFacts.sciName}</h3>

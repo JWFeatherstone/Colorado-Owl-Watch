@@ -18,11 +18,15 @@ const TrackedSpecies = ({ favorites, toggleFavorite }) => {
       />
     )
   })
-
+// show alternative message if no birds have been favorited
   return (
+    <>
+    {favorites.length === 0 ? <p className="no-favorites">You aren't tracking any birds yet!</p> :
     <section className="bird-grid">
       {favoriteOwlCards}
     </section>
+    }
+    </>
   )
 }
 
