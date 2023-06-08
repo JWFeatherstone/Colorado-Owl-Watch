@@ -44,7 +44,17 @@ swiper-slide {
   margin: 0;
   width: 90%;
   text-align: center;
+  text-decoration: none;
+  color: black;
 }
+
+.slide-header:hover {
+  transform: scale(1.02);
+  text-decoration: underline;
+  font-weight: 700;
+  color: rgb(39, 38, 38);
+}
+
 
 .slide-body {
   display: flex;

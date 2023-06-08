@@ -1,0 +1,16 @@
+.tips-main {
+  grid-template-columns: 0.3fr 4fr 6fr 0.3fr;
+}
+
+.owling-tips-graphic {
+  grid-row: 2/4;
+  grid-column: 2;
+  height: 95%;
+  width: 90%;
+  border-radius: 25px;
+  justify-self: center;
+  align-self: start;
+  background-position: center;
+  background-size: cover;
+}
+

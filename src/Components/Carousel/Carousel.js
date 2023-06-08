@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
+import { Link } from 'react-router-dom';
 import './Carousel.css';
 
 register();
@@ -29,7 +30,7 @@ const Carousel = ({ owls }) => {
           }}
         >
           <div className="slide-banner">
-            <h3 className="slide-header">{owl.comName}</h3>
+            <Link to={`/explore/${owl.spCode}`} className="slide-header">{owl.comName}</Link>
             <div className="slide-body">
               <p className="obs-date">{owl.obsDt}</p>
               <p>{owl.locName} {owl.locPrivate}</p>

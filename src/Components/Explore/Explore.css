@@ -1,4 +1,33 @@
 .explore-main {
   height: auto;
+  min-height: 200vh;
   grid-template-rows: 0.6fr 6fr 0.2fr;
+}
+
+.bird-grid {
+  grid-row: 2;
+  grid-column: 1/5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+/* add media query for min-width for large screens */
+
+@media (min-width: 1624px) {
+  .bird-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 1048px) {
+  .bird-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 848px) {
+  .bird-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

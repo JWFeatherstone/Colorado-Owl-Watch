@@ -94,3 +94,13 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
+@media (min-width: 1624px) {
+  header {
+    height: 7vh;
+  }
+
+  .menu {
+    top: 7vh;
+  }
+}

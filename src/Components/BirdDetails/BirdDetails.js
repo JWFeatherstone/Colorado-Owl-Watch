@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { coowls } from '../../Utilities/coowls';
 import { cleanOwlData } from '../../Utilities/utility';
 import { fetchRecentObservationsBySpecies } from '../../APICalls/APICalls';
-import RecentObservations from '../RecentObservations/RecentObservations';
 import './BirdDetails.css';
 import Header from '../Header/Header';
 import CollapsibleInfo from '../CollapsibleInfo/CollapsibleInfo';

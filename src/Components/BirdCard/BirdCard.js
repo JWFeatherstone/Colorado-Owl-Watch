@@ -20,7 +20,7 @@ const BirdCard = ({name, spCode, sciName, favorited, toggleFavorite}) => {
             alt={favorited ? "unfavorite this owl" : "favorite this owl"}
             onClick={() => toggleFavorite(spCode)}
           />
-          <Link to={`/explore/${spCode}`} className="details-link">Info</Link>
+          <Link to={`/explore/${spCode}`} className="details-link">INFO</Link>
         </div>
       </div>
     </article>
