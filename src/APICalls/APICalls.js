@@ -9,11 +9,10 @@ export const fetchRecentObservations = async() => {
       'x-ebirdapitoken': MY_KEY
       }
   });
-  const data = await response.json();
   if (!response.ok) {
-    throw new Error(data.message);
+    throw new Error(response.status);
   }
-  return data;
+  return await response.json();
 }
 
 export const fetchRecentObservationsBySpecies = async(speciesCode) => {
@@ -23,9 +22,8 @@ export const fetchRecentObservationsBySpecies = async(speciesCode) => {
       'x-ebirdapitoken': MY_KEY
       }
   });
-  const data = await response.json();
   if (!response.ok) {
-    throw new Error(data.message);
+    throw new Error(response.status);
   }
-  return data;
+  return await response.json();
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Home from './Components/Home/Home';
 import Explore from './Components/Explore/Explore';
+import Error from './Components/Error/Error';
 import BirdDetails from './Components/BirdDetails/BirdDetails';
 import OwlingTips from './Components/OwlingTips/OwlingTips';
 import { Switch, Route } from 'react-router-dom';
@@ -34,6 +35,9 @@ const App = () => {
       </Route>
       <Route exact path='/owling-tips'>
         <OwlingTips />
+      </Route>
+      <Route exact path='/error'>
+        <Error />
       </Route>
     </Switch>
   );
