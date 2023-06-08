@@ -1,5 +1,6 @@
 .further-info-container {
-  grid-row: 3;
+  margin-top: 3rem;
+  grid-row: 2;
   grid-column: 2;
   height: 100%;
   width: 95%;
@@ -13,7 +14,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid black;
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 0.6rem 0;
 }
 
 .collapsible-header {
@@ -21,7 +22,36 @@
 }
 
 .collapsible-button {
-  font-size: 1.5rem;
+  font-size: 2rem;
   background: none;
   border: none;
+}
+
+.collapsible-button:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+  color: rgb(3, 117, 111);
+}
+
+.collapsible-content {
+  display: none;
+  padding: 0.1rem 0;
+}
+
+.collapsible-content-expanded {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.collapsible-content-header {
+  margin: 0;
+  font-size: 1rem;
+  font-family: brother 1816, sans-serif;
+}
+
+.collapsible-content-text {
+  font-size: 0.9rem;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0.3rem 0 1rem 0;
 }

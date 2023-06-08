@@ -1,7 +1,7 @@
 import React from 'react';
 import './HighLevelInfo.css';
 
-const HighLevelInfo = ({ owlFacts, spCode, favorited, toggleFavorite }) => {
+const HighLevelInfo = ({ owlFacts, spCode, favorited, toggleFavorite, idExpanded, obsExpanded, factsExpanded }) => {
   return (
     <section className="high-level-info-container">
       <h2 className="high-level-header">{owlFacts.comName}</h2>
@@ -14,7 +14,6 @@ const HighLevelInfo = ({ owlFacts, spCode, favorited, toggleFavorite }) => {
           onClick={() => toggleFavorite(spCode)}
         />
       </div>
-      <p className="high-level-blurb">{owlFacts.identification}</p>
     </section>
   )
 }
