@@ -1,10 +1,11 @@
 .bird-card {
-  height: 22em;
-  width: 19em;
+  height: 23em;
+  width: 18em;
   border-radius: 25px;
   display: grid;
   grid-template-rows: 6fr 2.8fr 0.25fr;
   border-radius: 25px;
+  background-position: center;
 }
 
 .card-banner {

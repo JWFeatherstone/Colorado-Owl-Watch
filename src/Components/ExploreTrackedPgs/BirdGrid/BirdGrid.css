@@ -6,12 +6,6 @@
   grid-gap: 2rem;
 }
 
-@media (min-width: 1624px) {
-  .bird-grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-
 @media (max-width: 1048px) {
   .bird-grid {
     grid-template-columns: repeat(3, 1fr);
