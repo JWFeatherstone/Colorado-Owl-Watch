@@ -18,8 +18,9 @@ const Map = ({ owls, favorites }) => {
   })
 
   const owlMarkers = owls.map((owl) => (
-    <Marker position={[owl.lat, owl.lng]} icon={favorites.includes(owl.spCode) ? favoriteIcon : customIcon} key={Date.now()}>
-      <Popup>
+    <Marker position={[owl.lat, owl.lng]} icon={favorites.includes(owl.spCode) ? favoriteIcon : customIcon} key={Math.random()}>
+      <Popup
+      key={Date.now()+1}>
         <h2 className="popup-header">{owl.comName}</h2>
         <h3>Location</h3>
         <p>{owl.locName}</p>
