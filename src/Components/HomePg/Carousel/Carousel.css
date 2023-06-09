@@ -91,3 +91,9 @@
   font-size: 1.1rem;
   font-style: italic;
 }
+
+@media (max-width: 968px) {
+  .home-carousel {
+    grid-row: 3;
+  }
+}

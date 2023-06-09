@@ -9,3 +9,16 @@ main {
   background-blend-mode: multiply;
 }
 
+@media (max-width: 1168px) {
+  main {
+    grid-template-columns: 0.3fr 4fr 3fr 0.3fr;
+  }
+}
+
+@media (max-width: 968px) {
+  main {
+    grid-template-columns: 0.3fr 5fr 0.3fr;
+    grid-template-rows: 0.75fr 3fr 4fr;
+    height: 150vh;
+  }
+}
