@@ -10,11 +10,7 @@ SwiperCore.use([Navigation]);
 
 const CollapsibleInfo = ({ owlFacts, owlObs, toggleId, toggleRange, toggleObs, idExpanded, obsExpanded, rangeExpanded }) => {
 
-  let recentObs;
-  if (owlObs.length === 0) {
-    recentObs = <p>No recent observations.</p>;
-  } else {
-    recentObs = owlObs.map(obs => {
+  let recentObs = owlObs.map(obs => {
       return (
         <SwiperSlide key={obs.id}>
           <RecentObservations
@@ -29,7 +25,7 @@ const CollapsibleInfo = ({ owlFacts, owlObs, toggleId, toggleRange, toggleObs, i
         </SwiperSlide>
       )
     });
-  }
+  
   
   return (
     <section 
@@ -56,16 +52,21 @@ const CollapsibleInfo = ({ owlFacts, owlObs, toggleId, toggleRange, toggleObs, i
       <div 
         className={`collapsible-content ${obsExpanded ? 'collapsible-content-expanded' : ''}`}
       >
-        <Swiper
-          className="recent-obs-swiper"
-          spaceBetween={20}
-          slidesPerView={1}
-          navigation
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
-        >
-          {recentObs}
-        </Swiper>
+        {
+          owlObs.length > 0 ?
+          <Swiper
+            className="recent-obs-swiper"
+            spaceBetween={20}
+            slidesPerView={1}
+            navigation
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log('slide change')}
+          >
+            {recentObs}
+          </Swiper>
+          :
+          <p>This guy hasn't been around recently.</p>
+        }
       </div>
       <div className="collapsible-info">
         <h3 className="collapsible-header">RANGE</h3>
