@@ -12,7 +12,7 @@ const HighLevelInfo = ({ owlFacts, spCode, favorited, toggleFavorite, idExpanded
       <h3 className="high-level-subheader">{owlFacts.sciName}</h3>
         <img
           className="detail-favorite"
-          src={favorited ? require('../../Images/favorite-icon.svg').default : require('../../Images/unfavorite-icon.svg').default}
+          src={favorited ? require('../../../Images/favorite-icon.svg').default : require('../../../Images/unfavorite-icon.svg').default}
           alt={favorited ? "unfavorite this owl" : "favorite this owl"}
           onClick={() => toggleFavorite(spCode)}
         />

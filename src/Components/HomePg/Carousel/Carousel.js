@@ -17,7 +17,7 @@ const Carousel = ({ owls }) => {
         <section 
           className="owl-slide" 
           style={{
-            background: `url(${require(`../../Images/${owl.spCode}.png`)}) no-repeat center center / cover`,
+            background: `url(${require(`../../../Images/${owl.spCode}.png`)}) no-repeat center center / cover`,
           }}
         >
           <div className="slide-banner">

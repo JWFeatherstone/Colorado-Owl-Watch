@@ -110,6 +110,18 @@ header {
   }
 }
 
+@media (max-width: 968px) {
+
+  .menu-link {
+    font-size: 0.75rem;
+    padding: 2%;
+    border: none;
+    text-align: center;
+    width: 15%;
+  }
+
+}
+
 @media (max-width: 768px) {
   header {
     height: 12vh;

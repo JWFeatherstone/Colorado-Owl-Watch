@@ -8,18 +8,19 @@ import './Map.css';
 const Map = ({ owls, favorites }) => {
 
   const customIcon = new Icon ({
-    iconUrl: require('../../Images/owl-icon-black.svg').default,
+    iconUrl: require('../../../Images/owl-icon-black.svg').default,
     iconSize: [25, 25]
   })
 
   const favoriteIcon = new Icon ({
-    iconUrl: require('../../Images/favorite-icon.svg').default,
+    iconUrl: require('../../../Images/favorite-icon.svg').default,
     iconSize: [25, 25]
   })
 
   const owlMarkers = owls.map((owl) => (
-    <Marker position={[owl.lat, owl.lng]} icon={favorites.includes(owl.spCode) ? favoriteIcon : customIcon} key={owl.subId}>
-      <Popup>
+    <Marker position={[owl.lat, owl.lng]} icon={favorites.includes(owl.spCode) ? favoriteIcon : customIcon} key={Math.random()}>
+      <Popup
+      key={Date.now()+1}>
         <h2 className="popup-header">{owl.comName}</h2>
         <h3>Location</h3>
         <p>{owl.locName}</p>

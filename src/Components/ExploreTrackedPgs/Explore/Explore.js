@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Header/Header';
+import Header from '../../Header/Header';
 import BirdGrid from '../BirdGrid/BirdGrid';
 import TrackedSpecies from '../TrackedSpecies/TrackedSpecies';
 import PropTypes from 'prop-types';

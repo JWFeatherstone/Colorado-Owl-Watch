@@ -15,13 +15,13 @@
   top: calc(50% - 30px);
   right: 10px;
   z-index: 9999;
-  background-image: url(../../Images/fwd-btn.svg);
+  background-image: url(../../../Images/fwd-btn.svg);
   background-repeat: no-repeat;
 }
 
 .swiper-button-prev {
   left: 0;
-  background-image: url(../../Images/back-btn.svg);
+  background-image: url(../../../Images/back-btn.svg);
   background-repeat: no-repeat;
 }
 

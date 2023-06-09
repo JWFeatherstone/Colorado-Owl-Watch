@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import Header from '../Header/Header';
+import Header from '../../Header/Header';
 import { Redirect } from 'react-router-dom';
 import Map from '../Map/Map';
 import Carousel from '../Carousel/Carousel';
-import { fetchRecentObservations } from '../../APICalls/APICalls';
-import { filterForOwls, cleanOwlData } from '../../Utilities/utility';
+import { fetchRecentObservations } from '../../../APICalls/APICalls';
+import { filterForOwls, cleanOwlData } from '../../../Utilities/utility';
 import './Home.css';
 
 const Home = ({ favorites }) => {

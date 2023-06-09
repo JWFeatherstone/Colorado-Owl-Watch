@@ -1,0 +1,30 @@
+.leaflet-container {
+    height: 80%;
+    width: 100%;
+    align-self: center;
+    border-radius: 15px;
+    grid-row: 2;
+    grid-column: 3;
+}
+
+.leaflet-popup-content {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+.leaflet-popup-content > h3 {
+    margin: 0;
+}
+
+.leaflet-popup-content > p {
+    margin: 0.2rem 0 0.5rem 0;
+}
+
+
+.popup-header {
+    font-family: Span;
+    font-size: 1.2rem;
+}
