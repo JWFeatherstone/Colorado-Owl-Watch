@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useParams, Redirect } from 'react-router-dom';
-import { coowls } from '../../Utilities/coowls';
-import { cleanOwlData } from '../../Utilities/utility';
-import { fetchRecentObservationsBySpecies } from '../../APICalls/APICalls';
+import { coowls } from '../../../Utilities/coowls';
+import { cleanOwlData } from '../../../Utilities/utility';
+import { fetchRecentObservationsBySpecies } from '../../../APICalls/APICalls';
 import './BirdDetails.css';
-import Header from '../Header/Header';
+import Header from '../../Header/Header';
 import CollapsibleInfo from '../CollapsibleInfo/CollapsibleInfo';
 import HighLevelInfo from '../HighLevelnfo/HighLevelInfo';
 
@@ -82,7 +82,7 @@ const BirdDetails = ({favorites, toggleFavorite}) => {
           obsExpanded={obsExpanded}
           rangeExpanded={rangeExpanded}
         />
-        <img src={require(`../../Images/${spCode}.png`)} alt={owlFacts.name} className="owl-detail-image" />
+        <img src={require(`../../../Images/${spCode}.png`)} alt={owlFacts.name} className="owl-detail-image" />
       </main>
     </>
     )}

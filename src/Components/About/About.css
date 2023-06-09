@@ -1,0 +1,25 @@
+.about-sub, .about-header {
+  width: 70%;
+  text-align: left;
+  transform: translateY(-10%);
+}
+
+@media (max-width: 1100px) {
+  .about-sub, .about-header {
+    width: 90%;
+  }
+
+  .about-header {
+    font-size: 2rem;
+  }
+
+  .about-sub {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 958px) {
+  .about-sub, .about-header {
+    transform: translateY(-50px)
+  }
+}

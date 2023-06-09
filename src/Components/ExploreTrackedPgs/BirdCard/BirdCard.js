@@ -8,7 +8,7 @@ const BirdCard = ({name, spCode, sciName, favorited, toggleFavorite}) => {
     <article
       className="bird-card" 
       style={{
-      background: `url(${require(`../../Images/${spCode}.png`)}) no-repeat center center / cover`,
+      background: `url(${require(`../../../Images/${spCode}.png`)}) no-repeat center center / cover`,
       }}
     >
       <div className="card-banner">
@@ -17,7 +17,7 @@ const BirdCard = ({name, spCode, sciName, favorited, toggleFavorite}) => {
         <div className="card-links">
           <img
             className="card-favorite"
-            src={favorited ? require('../../Images/favorite-icon.svg').default : require('../../Images/unfavorite-icon.svg').default}
+            src={favorited ? require('../../../Images/favorite-icon.svg').default : require('../../../Images/unfavorite-icon.svg').default}
             alt={favorited ? "unfavorite this owl" : "favorite this owl"}
             onClick={() => toggleFavorite(spCode)}
           />

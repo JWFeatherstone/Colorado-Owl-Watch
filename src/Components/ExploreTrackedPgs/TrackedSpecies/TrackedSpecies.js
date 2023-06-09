@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './TrackedSpecies.css';
-import { coowls } from '../../Utilities/coowls';
+import { coowls } from '../../../Utilities/coowls';
 import BirdCard from '../BirdCard/BirdCard';
 
 const TrackedSpecies = ({ favorites, toggleFavorite }) => {

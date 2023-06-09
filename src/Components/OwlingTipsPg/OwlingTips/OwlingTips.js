@@ -1,6 +1,6 @@
 import React from 'react';
 import './OwlingTips.css';
-import Header from '../Header/Header';
+import Header from '../../Header/Header';
 import OwlingInfo from '../OwlingInfo/OwlingInfo';
 
 const OwlingTips = () => {
@@ -9,7 +9,7 @@ const OwlingTips = () => {
       <Header />
       <main className="tips-main">
         <OwlingInfo />
-        <img className="owling-tips-graphic" src={require('../../Images/long-eared-owling-tips.png')} alt="owling tips graphic" />
+        <img className="owling-tips-graphic" src={require('../../../Images/long-eared-owling-tips.png')} alt="owling tips graphic" />
       </main>
     </>
   )

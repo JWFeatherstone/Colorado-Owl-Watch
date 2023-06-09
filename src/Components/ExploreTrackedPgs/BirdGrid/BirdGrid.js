@@ -1,5 +1,5 @@
 import React from 'react';
-import { coowls } from '../../Utilities/coowls';
+import { coowls } from '../../../Utilities/coowls';
 import BirdCard from '../BirdCard/BirdCard';
 import PropTypes from 'prop-types';
 import './BirdGrid.css';
