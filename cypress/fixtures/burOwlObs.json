@@ -1,0 +1,47 @@
+[
+  {
+    "speciesCode": "brnowl",
+    "comName": "Burrowing Owl",
+    "sciName": "Athene cunicularia",
+    "locId": "L167924",
+    "locName": "Rocky Mountain Arsenal",
+    "obsDt": "2019-12-01 12:00",
+    "howMany": 1,
+    "lat": 39.815,
+    "lng": -104.802,
+    "obsValid": true,
+    "obsReviewed": false,
+    "locationPrivate": false,
+    "subId": "S78291431"
+  },
+  {
+    "speciesCode": "brnowl",
+    "comName": "Burrowing Owl",
+    "sciName": "Athene cunicularia",
+    "locId": "L167524",
+    "locName": "Castle Rock, CO",
+    "obsDt": "2019-10-01 15:00",
+    "howMany": 1,
+    "lat": 40.548,
+    "lng": -105.065,
+    "obsValid": true,
+    "obsReviewed": false,
+    "locationPrivate": false,
+    "subId": "S78291431"
+  },
+  {
+    "speciesCode": "brnowl",
+    "comName": "Burrowing Owl",
+    "sciName": "Athene cunicularia",
+    "locId": "L167924",
+    "locName": "Prospect Park, Lakewood CO",
+    "obsDt": "2020-20-17 15:00",
+    "howMany": 1,
+    "lat": 39.815,
+    "lng": -104.802,
+    "obsValid": true,
+    "obsReviewed": false,
+    "locationPrivate": false,
+    "subId": "S78291431"
+  }
+]
