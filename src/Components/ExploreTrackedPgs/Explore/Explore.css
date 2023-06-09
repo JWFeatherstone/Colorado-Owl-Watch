@@ -16,7 +16,6 @@
 
 @media (min-width: 1224px) {
   .bird-grid {
-    grid-template-columns: repeat(5, 1fr);
     padding: 0 2rem;
   }
 }
