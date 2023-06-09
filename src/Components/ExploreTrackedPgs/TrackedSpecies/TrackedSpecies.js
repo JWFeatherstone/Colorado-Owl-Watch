@@ -5,7 +5,6 @@ import { coowls } from '../../../Utilities/coowls';
 import BirdCard from '../BirdCard/BirdCard';
 
 const TrackedSpecies = ({ favorites, toggleFavorite }) => {
-
   const favoriteOwls = coowls.filter(coowl => favorites.includes(coowl.spCode))
   const favoriteOwlCards = favoriteOwls.map(owl => {
     return (
