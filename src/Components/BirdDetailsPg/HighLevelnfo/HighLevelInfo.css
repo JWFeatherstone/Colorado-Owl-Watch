@@ -40,6 +40,7 @@
 .detail-favorite {
   height: 1.8rem;
   width: 1.8rem;
+  z-index: 9999;
 }
 
 .high-level-blurb {
